@@ -1,0 +1,42 @@
+Dashboard "dashboard" {
+	architectures{
+		Architecture "Arquitectura 1" {
+			services {
+				Stimulus "Add Competitors",
+				Stimulus "Get Competitors"
+			}
+		}
+	}
+	metrics{
+		ResponseMetric "tiempoRespuestaMax" {
+			metric MAX_RESPONSE_TIME
+			operator FEWER_EQ_THAN
+			value 1000.0
+			unit MILLISECONDS
+		},
+		ResponseMetric "porcentajeDeError" {
+			metric ERROR_PERCENTAGE
+			operator FEWER_EQ_THAN
+			value 0.25
+			unit MILLISECONDS
+		}
+	}	
+	scenarios{
+		QualityScenario "tiempoRespMax" {
+			responseMetric "tiempoRespuestaMax"
+			service "Add Competitors"
+		},
+		QualityScenario "percError" {
+			responseMetric "porcentajeDeError"
+			service "Add Competitors"
+		},
+		QualityScenario "tiempoRespMax" {
+			responseMetric "tiempoRespuestaMax"
+			service "Get Competitors"
+		},
+		QualityScenario "percError" {
+			responseMetric "porcentajeDeError"
+			service "Get Competitors"
+		}
+	}
+}

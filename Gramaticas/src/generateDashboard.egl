@@ -1,0 +1,4 @@
+[% 
+	var t:Template:= TemplateFactory.load('dashboard.egl');
+	t.generate('C:/Users/SEBASTIAN/Documents/UNIANDES/runtime-Grammars/Gramaticas/dashboard/dashboard.html');
+%]
